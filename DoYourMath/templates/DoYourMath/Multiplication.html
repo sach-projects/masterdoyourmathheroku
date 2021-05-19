@@ -1,0 +1,21 @@
+{% extends "DoYourMath/index.html" %}
+{%block body%}
+<nav>
+  <h1>Hey Champ! What are we solving today</h1>
+  <a href="{% url 'DoYourMath:multiplication' %}" class = "active">Multiplication</a>
+  <a href="{% url 'DoYourMath:substraction' %}">Substraction</a>
+  <a href="{% url 'DoYourMath:addition' %}">Addition</a>
+  <a href="{% url 'DoYourMath:division' %}">Division</a>
+</nav>
+    <div class="box">
+    <h2>Multiplication</h2>
+    <h3>{{number1}}</h3>
+    <h3>{{number2}}</h3>
+    <form class="" action="DoYourMath:multiplication" method="post">
+      {% csrf_token %}
+      {{ form }}
+      <input type="submit"><br><br>
+    </form>
+    <h4>{{answer}}</h4>
+    </div>
+{% endblock %}

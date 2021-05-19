@@ -1,0 +1,23 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Do Your Maths</title>
+    <link rel="stylesheet" href="{% static 'DoYourMath/style.css' %}">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Fira+Sans&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    {% block body %}
+    <nav>
+    <h1>Hey Champ! What are we solving today</h1>
+    <a href="{% url 'DoYourMath:multiplication' %}">Multiplication</a>
+    <a href="{% url 'DoYourMath:substraction' %}">Substraction</a>
+    <a href="{% url 'DoYourMath:addition' %}">Addition</a>
+    <a href="{% url 'DoYourMath:division' %}">Division</a>
+    </nav>
+
+    {% endblock %}
+  </body>
+</html>
